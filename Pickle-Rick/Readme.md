@@ -122,11 +122,15 @@ Code/Status 403 mean we dont have permission to check these pages.
 
 Didn't find anything on /assets, lets move on to the next.
 * /index.html is the home/default page.
+* 
 * /robots.txt:
-      ![robots.txt](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/8.png?raw=true)
+  
+![robots.txt](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/8.png?raw=true)
+
 
 * /denied.php, /login.php & /portal.php are all redirecting to /login.php:
-      ![login.php](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/7.png?raw=true)
+
+![login.php](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/7.png?raw=true)
 
 
 Here, we got a login page.
