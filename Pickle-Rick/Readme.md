@@ -122,7 +122,7 @@ Code/Status 403 mean we dont have permission to check these pages.
 
 Didn't find anything on /assets, lets move on to the next.
 * /index.html is the home/default page.
-* 
+
 * /robots.txt:
   
 ![robots.txt](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/8.png?raw=true)
