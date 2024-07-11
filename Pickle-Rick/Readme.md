@@ -144,11 +144,12 @@ After login we got a Command panel:
 ![Command Pannel](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/9.png?raw=true)
 
 
-Lets try to run simple linux command like: `ls`, `whoami` , `date`, `cat` , etc.
+Lets try to run simple linux command like: `ls`, `whoami`, `date`, `cat`, etc.
 
  
 
 OK, so its a Linux Server. Now lets see results of `ls`:
+
 ![Cat](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/10.png?raw=true)
 
 
