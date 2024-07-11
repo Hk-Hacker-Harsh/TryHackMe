@@ -12,7 +12,7 @@ Click on the start Machine Button in the task, and give it 3-5 min to fully load
 
 Now, Start Attakbox or connect using Open-VPN.
 
-> Note: Check the connecting using ping command: ping \<Machine IP\>.
+> Note: Check the connecting using ping command: ping <Machine IP\>.
 
 
 
@@ -20,7 +20,7 @@ Now, Start Attakbox or connect using Open-VPN.
 
 Our first step will be pretty simple, to run an nmap scan to find out open ports on the machine, Run the following command in the Terminal:
 
-`nmap -Pn -O -sV -sC -T5 -vv -p- \<Machine IP\>`
+`nmap -Pn -O -sV -sC -T5 -vv -p- <Machine IP\>`
 
 > nmap : tool for network scanning
 
@@ -42,6 +42,7 @@ Our first step will be pretty simple, to run an nmap scan to find out open ports
 
 
 ***Output:***
+
 ![Nmap Scan](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/2.png?raw=true)
 
 From the enumeration process we found out that their are two services running on the machine:
@@ -50,10 +51,14 @@ From the enumeration process we found out that their are two services running on
 
 
 So, lets check for the http service running on port 80 on the machine, search for the ip address on browser.
+
 ![HTTP](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/3.png?raw=true)
 
+
 Ok, now we got a web service running on machine IP, Let's check for its Source Code first:
+
 ![Browser](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/4.png?raw=true)
+
 
 From the website's source code, we can see a comment saying:
 > Note to self, remember username!    Username: R1ckRul3s
@@ -78,7 +83,8 @@ Then, run a command to find subdomain and sub directories related to the website
 ***Output:***
 ![Gobuster](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/5.png?raw=true)
 
-Let's go for each subdomain one-by-one: http://\<Machine IP\>/<Subdomain>
+
+Let's go for each subdomain one-by-one: http://<Machine IP\>/<Subdomain>
 
   /.php                 (Status: 403) [Size: 291]
   /.html                (Status: 403) [Size: 292]
@@ -98,9 +104,9 @@ Let's go for each subdomain one-by-one: http://\<Machine IP\>/<Subdomain>
 
 Code/Status 403 mean we dont have permission to check these pages.
   /assets: 
-![Assets](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/6.png?raw=true)
+  ![Assets](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/6.png?raw=true)
 
-Din't find anything on /assets, lets move on to the next.
+Didn't find anything on /assets, lets move on to the next.
 * /index.html is the home/default page.
 * /robots.txt:
       ![robots.txt](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/8.png?raw=true)
@@ -108,13 +114,16 @@ Din't find anything on /assets, lets move on to the next.
 * /denied.php, /login.php & /portal.php are all redirecting to /login.php:
       ![login.php](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/7.png?raw=true)
 
+
 Here, we got a login page.
 ok, previously we got a username  : R1ckRul3s
 and we also got a word string from robots.txt : Wubbalubbadubdub
 So, lets try them as username and password.
 
+
 After login we got a Command panel:
 ![Command Pannel](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/9.png?raw=true)
+
 
 Lets try to run simple linux command like: ls, whoami , date, cat ,etc.
 
@@ -122,6 +131,7 @@ Lets try to run simple linux command like: ls, whoami , date, cat ,etc.
 
 OK, so its a Linux Server. Now lets see results of ls:
 ![Cat](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/10.png?raw=true)
+
 
 Got a list of files on the server. lets try to read a file using "cat <filename>".
 
@@ -132,9 +142,12 @@ lets try to access Sup3rS3cretPickl3Ingred.txt using url method:
 **http://\<Machine IP\>/Sup3rS3cretPickl3Ingred.txt**
 
 ***Output:***
+
 ![code](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/11.png?raw=true)
 
+
 Got the first ingredient.
+
 ![ans1](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/12.png?raw=true)
 
 
@@ -152,14 +165,19 @@ Second Ingredient: `/home/rick/second ingredient` : to read this file use less c
               `less /home/rick/"second ingredients"`
 
 ***Output: 1 jerry tear***
+
 ![ans2](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/13.png?raw=true)
 
+
 Third Ingredient: `/root`
+
 ![Command](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/14.png?raw=true)
+
 
 Use sudo command to list files in /root directory and read the file using `tac` or `less` command with sudo :
 
 ***Output: fleeb juice***
+
 ![Ans3](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/15.png?raw=true)
 
 
