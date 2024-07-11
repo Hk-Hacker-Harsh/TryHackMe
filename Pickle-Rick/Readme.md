@@ -87,20 +87,20 @@ Then, run a command to find subdomain and sub directories related to the website
 
 Let's go for each subdomain one-by-one: http://<Machine IP\>/<Subdomain>
 
-  /.php                 (Status: 403) [Size: 291]
-  /.html                (Status: 403) [Size: 292]
-  /.hta.php             (Status: 403) [Size: 295]
-  /.hta                 (Status: 403) [Size: 291]
-  /.hta.txt             (Status: 403) [Size: 295]
-  /.htaccess            (Status: 403) [Size: 296]
-  /.htaccess.txt        (Status: 403) [Size: 300]
-  /.hta.html            (Status: 403) [Size: 296]
-  /.htaccess.html       (Status: 403) [Size: 301]
-  /.htpasswd            (Status: 403) [Size: 296]
-  /.htaccess.php        (Status: 403) [Size: 300]
-  /.htpasswd.php        (Status: 403) [Size: 300]
-  /.htpasswd.txt        (Status: 403) [Size: 300]
-  /.htpasswd.html       (Status: 403) [Size: 300]
+/.php                 (Status: 403) [Size: 291]
+/.html                (Status: 403) [Size: 292]
+/.hta.php             (Status: 403) [Size: 295]
+/.hta                 (Status: 403) [Size: 291]
+/.hta.txt             (Status: 403) [Size: 295]
+/.htaccess            (Status: 403) [Size: 296]
+/.htaccess.txt        (Status: 403) [Size: 300]
+/.hta.html            (Status: 403) [Size: 296]
+/.htaccess.html       (Status: 403) [Size: 301]
+/.htpasswd            (Status: 403) [Size: 296]
+/.htaccess.php        (Status: 403) [Size: 300]
+/.htpasswd.php        (Status: 403) [Size: 300]
+/.htpasswd.txt        (Status: 403) [Size: 300]
+/.htpasswd.html       (Status: 403) [Size: 300]
 
 
 Code/Status 403 mean we dont have permission to check these pages.
