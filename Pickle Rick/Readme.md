@@ -12,4 +12,4 @@ Click on the start Machine Button in the task, and give it 3-5 min to fully load
 
 Now, Start Attakbox or connect using Open-VPN.
 
-> Note: Check the connecting using ping command: ping <Machine IP>.
+> Note: Check the connecting using ping command: ping \<Machine IP\>.
