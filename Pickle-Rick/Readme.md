@@ -202,5 +202,5 @@ Use sudo command to list files in /root directory and read the file using `tac` 
 ![Ans3](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/15.png?raw=true)
 
 
-***Finally!! we have successfully solved all challenges!
+## ***Finally!! we have successfully solved all challenges!
 THANK YOU!***
