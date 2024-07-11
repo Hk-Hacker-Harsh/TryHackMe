@@ -20,7 +20,7 @@ Now, Start Attakbox or connect using Open-VPN.
 
 Our first step will be pretty simple, to run an nmap scan to find out open ports on the machine, Run the following command in the Terminal:
 
-`nmap -Pn -O -sV -sC -T5 -vv -p- <Machine IP\>`
+`nmap -Pn -O -sV -sC -T5 -vv -p- <Machine IP>`
 
 > nmap : tool for network scanning
 
@@ -46,8 +46,8 @@ Our first step will be pretty simple, to run an nmap scan to find out open ports
 ![Nmap Scan](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/2.png?raw=true)
 
 From the enumeration process we found out that their are two services running on the machine:
-1. SSH
-2. Http
+  1. SSH
+  2. Http
 
 
 So, lets check for the http service running on port 80 on the machine, search for the ip address on browser.
@@ -61,7 +61,7 @@ Ok, now we got a web service running on machine IP, Let's check for its Source C
 
 
 From the website's source code, we can see a comment saying:
-> Note to self, remember username!    Username: R1ckRul3s
+> Note to self, remember username!    Username: `R1ckRul3s`
 
 
 We got a username of something (no idea about it), note it down somewhere else.
@@ -81,6 +81,7 @@ Then, run a command to find subdomain and sub directories related to the website
 
 
 ***Output:***
+
 ![Gobuster](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/5.png?raw=true)
 
 
@@ -116,30 +117,32 @@ Didn't find anything on /assets, lets move on to the next.
 
 
 Here, we got a login page.
-ok, previously we got a username  : R1ckRul3s
-and we also got a word string from robots.txt : Wubbalubbadubdub
+ok, previously we got a username  : `R1ckRul3s`
+and we also got a word string from robots.txt : `Wubbalubbadubdub`
 So, lets try them as username and password.
 
 
 After login we got a Command panel:
+
 ![Command Pannel](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/9.png?raw=true)
 
 
-Lets try to run simple linux command like: ls, whoami , date, cat ,etc.
+Lets try to run simple linux command like: `ls`, `whoami` , `date`, `cat` , etc.
 
  
 
-OK, so its a Linux Server. Now lets see results of ls:
+OK, so its a Linux Server. Now lets see results of `ls`:
 ![Cat](https://github.com/Hk-Hacker-Harsh/TryHackMe/blob/Root/Pickle-Rick/IMG/10.png?raw=true)
 
 
-Got a list of files on the server. lets try to read a file using "cat <filename>".
+Got a list of files on the server. lets try to read a file using `cat <filename>`.
 
 OOhhooo  some commands are disabled.
 
-lets try to access Sup3rS3cretPickl3Ingred.txt using url method:
+lets try to access `Sup3rS3cretPickl3Ingred.txt` using url method:
 
-**http://\<Machine IP\>/Sup3rS3cretPickl3Ingred.txt**
+**http://<Machine IP\>/Sup3rS3cretPickl3Ingred.txt**
+
 
 ***Output:***
 
@@ -182,4 +185,4 @@ Use sudo command to list files in /root directory and read the file using `tac` 
 
 
 ***Finally!! we have successfully solved all challenges!
-Thank YOU!***
+THANK YOU!***
